@@ -1,7 +1,5 @@
 package org.woven.foundation.course;
 
-
-import lombok.var;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -11,6 +9,7 @@ import java.time.LocalDate;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.*;
 
@@ -138,4 +137,14 @@ public class TestStudent {
         var results = studentList.stream().collect(groupingBy(Student::getAge, groupingBy(Student::getSubject,counting())));
         logger.log(Level.INFO,"{0}",results);
     }
+
+    @Test
+    void testDuplicate(){
+        List<Integer> list = Arrays.asList(1,2,3,2,2,3,4,2,5,8,6,2);
+//        var results = list.stream().collect(groupingBy(Function.identity(),counting()));
+
+        var results = list.stream().filter(integer -> Collections.frequency(list,integer) > 1).collect(Collectors.toSet());
+        logger.log(Level.INFO,"{0}",results);
+    }
+
 }
