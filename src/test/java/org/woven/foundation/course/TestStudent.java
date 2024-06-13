@@ -147,4 +147,39 @@ public class TestStudent {
         logger.log(Level.INFO,"{0}",results);
     }
 
+    @Test
+    void testAverage(){
+        double averageAge = studentList.stream().filter(student -> student.getGender().equals(Gender.BOY))
+                .mapToInt(Student::getAge).average().orElseThrow(IllegalArgumentException::new);
+        logger.log(Level.INFO,"average age of boys {0}",averageAge);
+    }
+
+    @Test
+    void testMaxAge(){
+        double maxAge = studentList.stream().filter(student -> student.getGender().equals(Gender.BOY))
+                .mapToInt(Student::getAge).max().orElseThrow(IllegalArgumentException::new);
+        logger.log(Level.INFO,"max age of boys {0}",maxAge);
+    }
+
+    @Test
+    void testMinAge(){
+        double maxAge = studentList.stream().filter(student -> student.getGender().equals(Gender.BOY))
+                .mapToInt(Student::getAge).min().orElseThrow(IllegalArgumentException::new);
+        logger.log(Level.INFO,"min age of boys {0}",maxAge);
+    }
+
+    @Test
+    void testReduce(){
+        double result = studentList.stream().filter(student -> student.getGender().equals(Gender.BOY))
+                .map(Student::getAge).reduce(0, Integer::sum);
+        logger.log(Level.INFO,"reduce operation on age of boys {0}",result);
+    }
+
+    @Test
+    void testSum(){
+        double result = studentList.stream().filter(student -> student.getGender().equals(Gender.BOY))
+                .mapToInt(Student::getAge).sum();
+        logger.log(Level.INFO,"sum of age of boys {0}",result);
+    }
+
 }
