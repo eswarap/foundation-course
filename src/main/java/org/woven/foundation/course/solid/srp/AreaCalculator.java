@@ -14,7 +14,9 @@ public class AreaCalculator {
      * Instead of calculating area in this method, we delegate the responsibility to individual class and
      * hence open for adding new shapes in the Future. By defining Shape with calculateArea as contract, we are
      * instructing the subclass types to bind/abide/adhere to the methods
-     *
+     * <p>
+     * Hence it open for extension , but closed for modification
+     * </p>
      * @return sum
      */
     public int sum() {
