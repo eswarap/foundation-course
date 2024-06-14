@@ -19,5 +19,6 @@ public class TestNotificationService {
         notification = new EmailNotification();
         notificationService = new NotificationService(notification);
         notificationService.send("Hello Good Morning");
+
     }
 }
