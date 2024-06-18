@@ -16,8 +16,8 @@ public class TestSingleton {
         EagerInitializedSingleton singleton = EagerInitializedSingleton.getInstance();
         EagerInitializedSingleton singleton2 = null;
         try {
-            Constructor[] constructors = EagerInitializedSingleton.class.getDeclaredConstructors();
-            for (Constructor constructor : constructors) {
+            Constructor<?>[] constructors = EagerInitializedSingleton.class.getDeclaredConstructors();
+            for (Constructor<?> constructor : constructors) {
                 constructor.setAccessible(true);
                 singleton2 = (EagerInitializedSingleton) constructor.newInstance();
                 break;

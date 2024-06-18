@@ -17,6 +17,7 @@ import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.groupingBy;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class TestBook {
 
@@ -110,9 +111,8 @@ public class TestBook {
     @DisplayName("listToMapWithDupKeyError - Year of Publish ")
     @Test
     void testBookListToMapWithDupKeyError() {
-        books.stream()
-            .collect(Collectors.toMap(Book::getPublished, Function.identity()))
-            .forEach((key,value) -> logger.log(Level.INFO,"Year Of Publish {0} : Book {1}",new Object[]{key,value}));
+       assertThrows(IllegalStateException.class,()->books.stream()
+            .collect(Collectors.toMap(Book::getPublished, Function.identity())));
     }
 
     @DisplayName("listToMapWithDupKey - Year of Publish")
