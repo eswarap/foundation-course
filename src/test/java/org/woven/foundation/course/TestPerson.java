@@ -13,9 +13,9 @@ import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.*;
 
-public class TestStudent {
+public class TestPerson {
 
-    private static final Logger logger = Logger.getLogger(TestStudent.class.getName());
+    private static final Logger logger = Logger.getLogger(TestPerson.class.getName());
 
     static List<Student> studentList =  new ArrayList<>();
     @BeforeAll

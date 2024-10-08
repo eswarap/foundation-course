@@ -2,11 +2,9 @@ package org.woven.foundation.course.bank;
 
 import lombok.Getter;
 import lombok.ToString;
-import lombok.extern.slf4j.Slf4j;
 
 @Getter
 @ToString
-@Slf4j
 public class SavingsAccount extends BankAccount {
     private double interestRate;
 

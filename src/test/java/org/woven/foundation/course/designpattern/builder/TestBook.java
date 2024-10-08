@@ -5,10 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.time.Year;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Function;
 import java.util.logging.Level;
@@ -138,4 +135,23 @@ public class TestBook {
             .collect(Collectors.toMap(Book::getTitle, Function.identity(), (o1, o2) -> o1, TreeMap::new))
             .forEach((key,value) -> logger.log(Level.INFO,"Title : {0} : {1}",new Object[]{key,value}));
     }
+
+    @DisplayName("no of books per author between the year 2000 and 2010 in Non Genre")
+    @Test
+    void testBooksListInGenreBetweenYears() {
+        books.stream().filter(book -> book.getGenre().equals(Genre.NONFICTION)
+                                    && book.getPublished().isAfter(Year.of(1999))
+                                    && book.getPublished().isBefore(Year.of(2011)))
+                    .collect(groupingBy(Book::getAuthor,groupingBy(Book::getPublished)))
+                    .forEach((key,value) -> logger.log(Level.INFO,"Author : {0} : {1}",new Object[]{key,value}));
+    }
+
+    @Test
+    void testFunctions() {
+        List<Integer> positiveNums = Arrays.asList(1,2,3,4,5,6,7,8);
+        positiveNums.stream().map(num -> num * 2) //Function
+                            .filter(num -> num == 12 ) //Predicate
+                            .forEach(num -> logger.log(Level.INFO,String.valueOf(num))); //Consumer
+    }
+
 }
