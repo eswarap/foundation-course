@@ -1,6 +1,7 @@
 package org.woven.foundation.course.collections;
 
 import lombok.SneakyThrows;
+import lombok.extern.java.Log;
 import org.junit.jupiter.api.*;
 import org.woven.foundation.course.codechef.Address;
 
@@ -10,11 +11,11 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
-import java.util.logging.Logger;
 
+@Log
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class TestPersonCollection {
-    private static final Logger logger = Logger.getLogger(TestPersonCollection.class.getName());
+
     private static Collection<Person> personCollection;
     private static Set<Person> peopleHashSet;
     private static Set<Person> peopleTreeSet;
