@@ -182,4 +182,16 @@ public class TestPerson {
         logger.log(Level.INFO,"sum of age of boys {0}",result);
     }
 
+    @Test
+    void countOfBoysAndGirls() {
+        studentList.stream().collect(groupingBy(Student::getGender, counting()))
+                .forEach((gender, count) -> logger.log(Level.INFO, "Number of {0}", gender.name() +"=" +count.intValue()));
+    }
+
+    @Test
+    void studentAbove28() {
+        studentList.stream().collect(partitioningBy(student -> student.getAge() >= 28, counting()))
+                .forEach((gender, count) -> logger.log(Level.INFO, "Number students more than 28 {0}", gender +"=" +count.intValue()));
+    }
+
 }
