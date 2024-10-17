@@ -16,7 +16,7 @@ import java.util.Collection;
 @Log
 public class TestPersonIterator {
 
-    private static Collection<Person> people  = null;
+    private static Collection<Person> people  = new ArrayList<>();
     static Address personAddress = new Address("123 Main St", "Cityville", "12345");
     static LocalDate dateOfBirth = LocalDate.of(2000,1,1);
     static Person person1 = new Person("John", "Doe", dateOfBirth, personAddress);
@@ -28,7 +28,6 @@ public class TestPersonIterator {
     @BeforeEach
     void setUp() {
         log.info("setup");
-        people  = new ArrayList<>();
         people.add(person1);
         people.add(person2);
         people.add(person3);
@@ -46,5 +45,6 @@ public class TestPersonIterator {
     @AfterEach
     void tearDown() {
         log.info("tear down");
+        people.clear();
     }
 }
