@@ -16,9 +16,9 @@ import java.util.TreeSet;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class TestPersonCollection {
 
-    private static Collection<Person> personCollection;
-    private static Set<Person> peopleHashSet;
-    private static Set<Person> peopleTreeSet;
+    private static Collection<Person> personCollection = new ArrayList<>();
+    private static Set<Person> peopleHashSet = new HashSet<>();
+    private static Set<Person> peopleTreeSet = new TreeSet<>();
     static Address personAddress = new Address("123 Main St", "Cityville", "12345");
     static LocalDate dateOfBirth = LocalDate.of(2000,1,1);
     static Person person1 = new Person("John", "Doe", dateOfBirth, personAddress);
@@ -29,9 +29,6 @@ public class TestPersonCollection {
 
     @BeforeAll
     static void setUp() throws Exception {
-        personCollection = new ArrayList<>();
-        peopleHashSet = new HashSet<>();
-        peopleTreeSet = new TreeSet<>();
 
         personCollection.add(person1);
         personCollection.add(person2);
