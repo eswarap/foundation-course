@@ -16,19 +16,19 @@ import java.util.TreeSet;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class TestPersonCollection {
 
-    private static Collection<Person> personCollection = new ArrayList<>();
-    private static Set<Person> peopleHashSet = new HashSet<>();
-    private static Set<Person> peopleTreeSet = new TreeSet<>();
-    static Address personAddress = new Address("123 Main St", "Cityville", "12345");
-    static LocalDate dateOfBirth = LocalDate.of(2000,1,1);
-    static Person person1 = new Person("John", "Doe", dateOfBirth, personAddress);
-    static Person person2 = new Person("Jeff", "Smith", dateOfBirth,  personAddress);
-    static Person person3 = new Person("Jerry", "Maguire", dateOfBirth,  personAddress);
-    static Person person4 = new Person("Peter", "Parler", dateOfBirth, personAddress);
-    static Person person5 = new Person("Tom", "Rich", dateOfBirth, personAddress);
+    Collection<Person> personCollection = new ArrayList<>();
+    Set<Person> peopleHashSet = new HashSet<>();
+    Set<Person> peopleTreeSet = new TreeSet<>();
+    Address personAddress = new Address("123 Main St", "Cityville", "12345");
+    LocalDate dateOfBirth = LocalDate.of(2000,1,1);
+    Person person1 = new Person("John", "Doe", dateOfBirth, personAddress);
+    Person person2 = new Person("Jeff", "Smith", dateOfBirth,  personAddress);
+    Person person3 = new Person("Jerry", "Maguire", dateOfBirth,  personAddress);
+    Person person4 = new Person("Peter", "Parler", dateOfBirth, personAddress);
+    Person person5 = new Person("Tom", "Rich", dateOfBirth, personAddress);
 
-    @BeforeAll
-    static void setUp() throws Exception {
+    @BeforeEach
+    protected void setUp()  {
 
         personCollection.add(person1);
         personCollection.add(person2);
@@ -47,6 +47,13 @@ public class TestPersonCollection {
         peopleTreeSet.add(person3);
         peopleTreeSet.add(person4);
         peopleTreeSet.add(person5);
+    }
+
+    @AfterEach
+    void tearDown() {
+        personCollection.clear();
+        peopleHashSet.clear();
+        peopleTreeSet.clear();
     }
 
     @Test
