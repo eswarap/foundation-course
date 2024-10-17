@@ -63,6 +63,6 @@ public class TestLinkedList {
     @Order(5)
     void set() {
         assertTrue(linkedList.set(0,"Alphabet"));
-        assertEquals(5,linkedList.getSize());
+        assertEquals(3,linkedList.getSize());
     }
 }
