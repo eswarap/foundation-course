@@ -12,8 +12,11 @@ import com.tngtech.archunit.lang.ConditionEvents;
 import com.tngtech.archunit.lang.SimpleConditionEvent;
 import org.junit.jupiter.api.Test;
 
+import java.util.logging.ConsoleHandler;
+import java.util.logging.FileHandler;
 import java.util.logging.Handler;
 import java.util.logging.Logger;
+import java.util.logging.StreamHandler;
 
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
 
@@ -128,7 +131,7 @@ public class TestLoggerFrameworkArchitecture {
     }
 
     @Test
-    void loggersShouldAdhereToOpenClosedPrinciple() {
+    void adhereToOpenClosedPrinciple() {
         // Import classes from the specified package
         JavaClasses importedClasses = new ClassFileImporter().importPackages(JAVA_UTIL_LOGGING);
 
@@ -142,7 +145,18 @@ public class TestLoggerFrameworkArchitecture {
     }
 
     @Test
-    void loggersShouldAdhereToLiskovSubstitutionPrinciple() {
+    void adhereToOpenForExtension() {
+
+        ArchRule handlerClassesShouldImplementOrExtend = classes()
+                .that().haveSimpleNameEndingWith("Handler") // Check for names ending with "Handler"
+                .should().beAssignableTo(Handler.class) // Check if they implement the Handler interface
+                .orShould().beAssignableTo(ConsoleHandler.class) // Or extend ConsoleHandler
+                .orShould().beAssignableTo(FileHandler.class)// Or extend FileHandler
+                .orShould().beAssignableTo(StreamHandler.class); // Or extend  StreamHandler
+    }
+
+    @Test
+    void adhereToLiskovSubstitutionPrinciple() {
         // Import classes from the specified package
         JavaClasses importedClasses = new ClassFileImporter().importPackages(JAVA_UTIL_LOGGING);
 
@@ -156,7 +170,7 @@ public class TestLoggerFrameworkArchitecture {
     }
 
     @Test
-    void loggersShouldAdhereToInterfaceSegregationPrinciple() {
+    void adhereToInterfaceSegregationPrinciple() {
         // Import classes from the specified package
         JavaClasses importedClasses = new ClassFileImporter().importPackages(JAVA_UTIL_LOGGING);
 
@@ -171,21 +185,21 @@ public class TestLoggerFrameworkArchitecture {
     }
 
     @Test
-    void loggersShouldDependOnAbstractions() {
+    void handlersShouldDependOnAbstractions() {
         // Import classes from the specified package
         JavaClasses importedClasses = new ClassFileImporter().importPackages(JAVA_UTIL_LOGGING);
 
-        // Define the rule: Logger classes should not depend on concrete implementations
         ArchRule rule1 = classes()
-                .that().haveSimpleName("ConsoleHandler")
+                .that().haveFullyQualifiedName(ConsoleHandler.class.getName())
                 .should().beAssignableTo(Handler.class);
 
         ArchRule rule2 = classes()
-                .that().haveSimpleName("Handler")
+                .that().haveFullyQualifiedName(Handler.class.getName())
                 .should().haveModifier(JavaModifier.ABSTRACT);
 
         // Check the rule against the imported classes
         rule1.check(importedClasses);
         rule2.check(importedClasses);
     }
+
 }
