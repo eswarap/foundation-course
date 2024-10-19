@@ -25,7 +25,7 @@ public class Person implements Comparable<Person> {
     }
 
     @Override
-    public int compareTo(Person o) {
+    public int compareTo(final Person o) {
         return this.firstName.compareTo(o.firstName);
     }
 }

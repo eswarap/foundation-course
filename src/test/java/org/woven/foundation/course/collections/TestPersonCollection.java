@@ -12,13 +12,15 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 @Log
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@Nested
 public class TestPersonCollection {
 
-    Collection<Person> personCollection = new ArrayList<>();
-    Set<Person> peopleHashSet = new HashSet<>();
-    Set<Person> peopleTreeSet = new TreeSet<>();
+    Collection<Person> personCollection;
+    Set<Person> peopleHashSet;
+    Set<Person> peopleTreeSet;
     Address personAddress = new Address("123 Main St", "Cityville", "12345");
     LocalDate dateOfBirth = LocalDate.of(2000,1,1);
     Person person1 = new Person("John", "Doe", dateOfBirth, personAddress);
@@ -28,38 +30,26 @@ public class TestPersonCollection {
     Person person5 = new Person("Tom", "Rich", dateOfBirth, personAddress);
 
     @BeforeEach
-    protected void setUp()  {
+    void createNewCollection() {
+        personCollection = new ArrayList<>();
+        peopleHashSet = new HashSet<>();
+        peopleTreeSet = new TreeSet<>();
+    }
 
+    @Test
+    @DisplayName("is empty")
+    void isEmpty() {
+        assertTrue(personCollection.isEmpty());
+    }
+
+    @Test
+    @DisplayName("when new person is added")
+    void testAddPerson_Collection() throws Exception {
         personCollection.add(person1);
         personCollection.add(person2);
         personCollection.add(person3);
         personCollection.add(person4);
         personCollection.add(person5);
-
-        peopleHashSet.add(person1);
-        peopleHashSet.add(person2);
-        peopleHashSet.add(person3);
-        peopleHashSet.add(person4);
-        peopleHashSet.add(person5);
-
-        peopleTreeSet.add(person1);
-        peopleTreeSet.add(person2);
-        peopleTreeSet.add(person3);
-        peopleTreeSet.add(person4);
-        peopleTreeSet.add(person5);
-    }
-
-    @AfterEach
-    void tearDown() {
-        personCollection.clear();
-        peopleHashSet.clear();
-        peopleTreeSet.clear();
-    }
-
-    @Test
-    @Order(1)
-    @SneakyThrows
-    public void testAddPerson_Collection() throws Exception {
         assert personCollection.contains(person1);
         assert personCollection.contains(person2);
         assert personCollection.contains(person3);
@@ -73,6 +63,12 @@ public class TestPersonCollection {
     @Order(2)
     @SneakyThrows
     public void testAddPerson_HashSet() throws Exception {
+        peopleHashSet.add(person1);
+        peopleHashSet.add(person2);
+        peopleHashSet.add(person3);
+        peopleHashSet.add(person4);
+        peopleHashSet.add(person5);
+
         assert peopleHashSet.contains(person1);
         assert peopleHashSet.contains(person2);
         assert peopleHashSet.contains(person3);
@@ -86,6 +82,12 @@ public class TestPersonCollection {
     @Order(3)
     @SneakyThrows
     public void testAddPerson_TreeSet() throws Exception {
+        peopleTreeSet.add(person1);
+        peopleTreeSet.add(person2);
+        peopleTreeSet.add(person3);
+        peopleTreeSet.add(person4);
+        peopleTreeSet.add(person5);
+
         assert peopleTreeSet.contains(person1);
         assert peopleTreeSet.contains(person2);
         assert peopleTreeSet.contains(person3);
