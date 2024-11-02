@@ -1,13 +1,15 @@
 Welcome to the Foundation Course repository! This project contains Java code focused on design patterns and data structures, 
 along with corresponding test cases to ensure functionality and reliability.
-# Table of Contents
-1. [Introduction] (#Introduction)
-2. Getting Started (#Getting Started)
-3. Project Structure (#Project Structure)
-4. Usage (#Usage)
-5. Running Tests (#Running Tests)
-6. Contributing (#Contributing)
-7. License(#License)
+## [Table of Contents](#table-of-contents)
+  * [Introduction](#introduction)
+  * [Getting Started](#getting-started)
+    + [Clone the Repository](#clone-the-repository)
+    + [Navigate to the Project Directory](#navigate-to-the-project-directory)
+  * [Project Structure](#project-structure)
+  * [Usage](#usage)
+  * [Running Tests](#running-tests)
+  * [Contributing](#contributing)
+  * [License](#license)
 ## Introduction
 This repository serves as a comprehensive guide to understanding fundamental concepts in Java programming, 
 particularly in design patterns and data structures. 
