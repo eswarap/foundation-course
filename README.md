@@ -33,31 +33,47 @@ foundation-course/
 ├── src/
 │   ├── main/
 │   │   └── java/
-│   │       └── com/
-│   │           └── example/
-│   │               └── dataStructures/     # Contains data structure implementations
-│   │               └── designPatterns/      # Contains design pattern implementations
+│   │       └── org/
+│   │           └── woven/
+│   │               └── algorithm/       # Contains data structure implementations
+│   │               └── collections/     # Contains data structure implementations
+|   |               └── datastructures/  # Contains data structure implementations
+│   │               └── designpattern/   # Contains design pattern implementations
 │   │
 │   └── test/
 │       └── java/
-│           └── com/
-│               └── example/
-│                   └── tests/              # Contains test cases for the code
+│           └── org/
+│               └── woven/
+│                  └── algorithm/         # Contains test case
+│                  └── collections/       # Contains test case
+|                  └── datastructures/    # Contains test case
+│                  └── designpattern/     # Contains test case
 │
-├── pom.xml                                   # Maven configuration file
-└── README.md                                  # Project documentation
+├── pom.xml                               # Maven configuration file
+└── README.md                             # Project documentation
 ```
 ## Usage
 To use any of the data structures or design patterns, simply import the relevant classes into your Java application. For example:
 ```bash
-import com.example.dataStructures.LinkedList;
-import com.example.designPatterns.Singleton;
-public class Main {
-    public static void main(String[] args) {
-        LinkedList list = new LinkedList();
-        // Use the linked list implementation
+  package org.woven.foundation.course.datastructures;
+  
+  import lombok.Getter;
+  
+  import java.util.logging.Logger;
+  
+  @Getter
+  public class LinkedList<T> {
+    private Node<T> head;
+    private Node<T> tail;
+    private int size;
+
+    public LinkedList(final T value) {
+        Node<T> newNode = new Node<>(value);
+        head = newNode;
+        tail = newNode;
+        size = 1;
     }
-}
+  }
 ```
 ## Running Tests
 To run the test cases included in this project, you can use Maven. Execute the following command in your terminal:
