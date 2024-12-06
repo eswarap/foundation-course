@@ -1,6 +1,6 @@
 package org.woven.foundation.course.solid.srp;
 
-import java.util.List;
+import java.util.*;
 
 public class AreaCalculator {
     private final List<Shape> shapes;

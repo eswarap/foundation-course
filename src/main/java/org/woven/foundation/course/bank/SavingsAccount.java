@@ -1,7 +1,6 @@
 package org.woven.foundation.course.bank;
 
-import lombok.Getter;
-import lombok.ToString;
+import lombok.*;
 
 @Getter
 @ToString

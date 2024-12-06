@@ -1,6 +1,6 @@
 package org.woven.foundation.course.designpattern.strategy;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 public class TestWorkoutStrategy {
 

@@ -1,7 +1,6 @@
 package org.woven.foundation.course.algorithm;
 
-import java.util.Arrays;
-import java.util.Stack;
+import java.util.*;
 
 public class NextGreatElement {
     public static void main(String[] args) {

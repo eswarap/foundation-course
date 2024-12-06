@@ -1,11 +1,8 @@
 package org.woven.foundation.course.algorithm;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class TestLinearSearch {
 

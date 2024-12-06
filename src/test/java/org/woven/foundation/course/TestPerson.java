@@ -1,15 +1,12 @@
 package org.woven.foundation.course;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.math.*;
+import java.time.*;
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.stream.Collectors;
+import java.util.logging.*;
+import java.util.stream.*;
 
 import static java.util.stream.Collectors.*;
 

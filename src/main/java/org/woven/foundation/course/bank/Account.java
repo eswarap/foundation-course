@@ -1,6 +1,6 @@
 package org.woven.foundation.course.bank;
 
-import lombok.SneakyThrows;
+import lombok.*;
 
 public interface Account {
     void deposit(double amount);

@@ -1,9 +1,8 @@
 package org.woven.foundation.course.designpattern.factorymethod;
 
-import lombok.extern.java.Log;
+import lombok.extern.java.*;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Single Concreate Factory

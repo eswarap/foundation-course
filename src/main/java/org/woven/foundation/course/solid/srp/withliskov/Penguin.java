@@ -1,8 +1,7 @@
 package org.woven.foundation.course.solid.srp.withliskov;
 
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.logging.*;
 
 public class Penguin implements ISwimmable {
     private static final Logger logger  = Logger.getLogger(Penguin.class.getName());

@@ -2,10 +2,9 @@ package org.woven.foundation.course;
 
 import lombok.*;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.Period;
-import java.util.UUID;
+import java.math.*;
+import java.time.*;
+import java.util.*;
 
 @Data
 @AllArgsConstructor

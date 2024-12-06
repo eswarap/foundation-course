@@ -1,17 +1,12 @@
 package org.woven.foundation.course.designpattern.iterator;
 
-import lombok.extern.java.Log;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.woven.foundation.course.codechef.Address;
-import org.woven.foundation.course.collections.Person;
+import lombok.extern.java.*;
+import org.junit.jupiter.api.*;
+import org.woven.foundation.course.codechef.*;
+import org.woven.foundation.course.collections.*;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Collection;
+import java.time.*;
+import java.util.*;
 
 @Log
 public class TestPersonIterator {

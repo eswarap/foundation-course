@@ -1,9 +1,8 @@
 package org.woven.foundation.course.solid.srp.withliskov;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
-import java.util.logging.Logger;
+import java.util.logging.*;
 
 public class TestBird {
 

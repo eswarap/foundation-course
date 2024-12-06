@@ -1,24 +1,15 @@
 package org.woven.foundation.course;
 
 
-import com.tngtech.archunit.core.domain.JavaClass;
-import com.tngtech.archunit.core.domain.JavaClasses;
-import com.tngtech.archunit.core.domain.JavaModifier;
-import com.tngtech.archunit.core.importer.ClassFileImporter;
-import com.tngtech.archunit.junit.AnalyzeClasses;
-import com.tngtech.archunit.lang.ArchCondition;
-import com.tngtech.archunit.lang.ArchRule;
-import com.tngtech.archunit.lang.ConditionEvents;
-import com.tngtech.archunit.lang.SimpleConditionEvent;
-import org.junit.jupiter.api.Test;
+import com.tngtech.archunit.core.domain.*;
+import com.tngtech.archunit.core.importer.*;
+import com.tngtech.archunit.junit.*;
+import com.tngtech.archunit.lang.*;
+import org.junit.jupiter.api.*;
 
-import java.util.logging.ConsoleHandler;
-import java.util.logging.FileHandler;
-import java.util.logging.Handler;
-import java.util.logging.Logger;
-import java.util.logging.StreamHandler;
+import java.util.logging.*;
 
-import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
+import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.*;
 
 
 @AnalyzeClasses(packages = TestLoggerFrameworkArchitecture.JAVA_UTIL_LOGGING)

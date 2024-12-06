@@ -1,9 +1,9 @@
 package org.woven.foundation.course.designpattern.factorymethod;
 
-import lombok.extern.java.Log;
-import org.junit.jupiter.api.Test;
+import lombok.extern.java.*;
+import org.junit.jupiter.api.*;
 
-import java.util.Locale;
+import java.util.*;
 
 @Log
 public class TestCurrencyFactory {

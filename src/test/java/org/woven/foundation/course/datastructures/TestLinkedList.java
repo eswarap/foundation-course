@@ -2,10 +2,9 @@ package org.woven.foundation.course.datastructures;
 
 import org.junit.jupiter.api.*;
 
-import java.util.logging.Logger;
+import java.util.logging.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class TestLinkedList {

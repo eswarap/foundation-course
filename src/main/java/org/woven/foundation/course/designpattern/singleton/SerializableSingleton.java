@@ -1,7 +1,6 @@
 package org.woven.foundation.course.designpattern.singleton;
 
-import java.io.Serial;
-import java.io.Serializable;
+import java.io.*;
 
 public class SerializableSingleton implements Serializable {
 

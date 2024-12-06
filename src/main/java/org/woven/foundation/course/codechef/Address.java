@@ -1,8 +1,7 @@
 package org.woven.foundation.course.codechef;
 
-import lombok.Getter;
-import lombok.ToString;
-import lombok.extern.java.Log;
+import lombok.*;
+import lombok.extern.java.*;
 
 @Getter
 @Log

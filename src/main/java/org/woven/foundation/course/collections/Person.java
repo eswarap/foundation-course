@@ -1,11 +1,9 @@
 package org.woven.foundation.course.collections;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.ToString;
-import org.woven.foundation.course.codechef.Address;
+import lombok.*;
+import org.woven.foundation.course.codechef.*;
 
-import java.time.LocalDate;
+import java.time.*;
 
 @Getter
 @ToString

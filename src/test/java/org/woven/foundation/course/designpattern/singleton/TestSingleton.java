@@ -1,11 +1,10 @@
 package org.woven.foundation.course.designpattern.singleton;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import java.io.*;
-import java.lang.reflect.Constructor;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.lang.reflect.*;
+import java.util.logging.*;
 
 public class TestSingleton {
 

@@ -1,7 +1,6 @@
 package org.woven.foundation.course.designpattern.abstractfactory;
 
-import org.woven.foundation.course.designpattern.factorymethod.Currency;
-import org.woven.foundation.course.designpattern.factorymethod.Pound;
+import org.woven.foundation.course.designpattern.factorymethod.*;
 
 public class PoundCurrencyFatory implements CurrencyFactory {
 

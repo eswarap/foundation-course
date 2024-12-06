@@ -1,7 +1,6 @@
 package org.woven.foundation.course.solid.srp.withoutliskov;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.logging.*;
 
 public class Duck implements Bird{
     private static final Logger logger  = Logger.getLogger(Duck.class.getName());
