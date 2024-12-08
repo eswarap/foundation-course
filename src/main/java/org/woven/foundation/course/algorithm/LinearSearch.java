@@ -1,6 +1,6 @@
 package org.woven.foundation.course.algorithm;
 
-import java.util.*;
+import java.util.List;
 
 public class LinearSearch<T> {
 

@@ -1,8 +1,8 @@
 package org.woven.foundation.course.designpattern.abstractfactory;
 
-import lombok.*;
-import lombok.extern.java.*;
-import org.woven.foundation.course.designpattern.factorymethod.*;
+import lombok.Getter;
+import lombok.extern.java.Log;
+import org.woven.foundation.course.designpattern.factorymethod.Currency;
 
 @Log
 public class CurrencyClient {

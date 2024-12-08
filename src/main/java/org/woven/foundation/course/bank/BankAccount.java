@@ -1,6 +1,8 @@
 package org.woven.foundation.course.bank;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.SneakyThrows;
+import lombok.ToString;
 
 @Getter
 @ToString

@@ -1,6 +1,7 @@
 package org.woven.foundation.course.designpattern.iterator;
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * Concrete iterator implementing Iterator interface

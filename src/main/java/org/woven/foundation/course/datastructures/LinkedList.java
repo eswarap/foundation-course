@@ -1,8 +1,7 @@
 package org.woven.foundation.course.datastructures;
 
-import lombok.*;
-
-import java.util.logging.*;
+import java.util.logging.Logger;
+import lombok.Getter;
 
 @Getter
 public class LinkedList<T> {

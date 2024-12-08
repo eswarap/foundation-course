@@ -1,8 +1,15 @@
 package org.woven.foundation.course.algorithm;
 
-import lombok.extern.java.*;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import lombok.extern.java.Log;
 
 @Log
 public class CollectionBasedDuplicateCheck {
@@ -45,9 +52,34 @@ public class CollectionBasedDuplicateCheck {
         }
     }
 
+    /**
+     * Find duplicates in an array using Java 8 stream.
+     * Time Complexity: O(n)
+     * Space Complexity: O(n)
+     *
+     * @param arr
+     */
+    public static void findDuplicatesUsingLamdba(Integer[] arr) {
+
+        List<Integer> list = Arrays.stream(arr).toList();
+
+        List<Integer> duplicates = list.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet().stream()
+                .filter(entry -> entry.getValue().intValue() > 1)
+                .map(Map.Entry::getKey)
+                .toList();
+        if (duplicates.isEmpty()) {
+            log.info("No duplicates found");
+        } else {
+            log.info("Duplicates found: " + duplicates);
+        }
+    }
+
+
     public static void main(String[] args) {
         Integer[] arr = {1, 3, 5, 7, 9, 6, 7, 8,3};
         CollectionBasedDuplicateCheck.findDuplicates(arr);
         CollectionBasedDuplicateCheck.findDuplicatesUsingSorting(arr);
+        CollectionBasedDuplicateCheck.findDuplicatesUsingLamdba(arr);
     }
 }

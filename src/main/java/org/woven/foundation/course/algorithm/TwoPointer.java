@@ -1,8 +1,8 @@
 package org.woven.foundation.course.algorithm;
 
-import lombok.extern.java.*;
-
-import java.util.*;
+import java.util.Arrays;
+import java.util.Objects;
+import lombok.extern.java.Log;
 
 @Log
 public class TwoPointer {

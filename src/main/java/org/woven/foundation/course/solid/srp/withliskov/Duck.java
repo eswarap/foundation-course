@@ -1,6 +1,7 @@
 package org.woven.foundation.course.solid.srp.withliskov;
 
-import java.util.logging.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Duck implements IFlyable,ISwimmable{
 

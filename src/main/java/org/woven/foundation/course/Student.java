@@ -1,10 +1,13 @@
 package org.woven.foundation.course;
 
-import lombok.*;
-
-import java.math.*;
-import java.time.*;
-import java.util.*;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.Period;
+import java.util.UUID;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.ToString;
 
 @Data
 @AllArgsConstructor

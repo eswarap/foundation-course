@@ -1,6 +1,6 @@
 package org.woven.foundation.course.designpattern.strategy;
 
-import lombok.extern.java.*;
+import lombok.extern.java.Log;
 
 /**
  * Concrete implementation of strategy

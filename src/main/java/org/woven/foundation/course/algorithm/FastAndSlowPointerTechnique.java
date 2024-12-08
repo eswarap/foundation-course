@@ -1,9 +1,8 @@
 package org.woven.foundation.course.algorithm;
 
-import lombok.extern.java.*;
-
-import java.util.*;
-import java.util.logging.*;
+import java.util.Arrays;
+import java.util.logging.Level;
+import lombok.extern.java.Log;
 
 @Log
 public class FastAndSlowPointerTechnique {
@@ -66,6 +65,137 @@ public class FastAndSlowPointerTechnique {
 
         return -1;
     }
+
+    /**
+     * Find kth largest element in an unsorted array.
+     *
+     * Algorithm:
+     * 1. Use QuickSelect algorithm to find the kth largest element.
+     * 2. The kth largest element is the (n - k + 1)th smallest element in the sorted array.
+     * 3. Use QuickSort algorithm to sort the array.
+     * 4. Return the (n - k + 1)th element in the sorted array.
+     *
+     * Time Complexity: O(n * log(n)) in the worst case.
+     * Space Complexity: O(n) for the recursive stack.
+     * @param arr
+     * @param k
+     * @return
+     */
+
+    public int findKthLargest(int[] arr, int k) {
+        int n = arr.length;
+        if (k <= 0 || k > n) {
+            return -1;
+        }
+
+        return quickSelect(arr, 0, n - 1, n - k + 1);
+    }
+
+    /**
+     * QuickSelect algorithm to find the kth smallest element in an array.
+     *
+     * Algorithm:
+     * 1. Pick a pivot element.
+     * 2. Partition the array around the pivot element.
+     * 3. If the index of the pivot element is equal to k, then return the pivot element.
+     * 4. If the index of the pivot element is greater than k, then recursively call the function for the left subarray.
+     * 5. If the index of the pivot element is less than k, then recursively call the function for the right subarray.
+     *
+     * Time Complexity: O(n) on average. O(n^2) in the worst case.
+     * Space Complexity: O(n) for the recursive stack.
+     * @param arr
+     * @param low
+     * @param high
+     * @param k
+     * @return
+     */
+    private int quickSelect(int[] arr, int low, int high, int k) {
+        if (low == high) {
+            return arr[low];
+        }
+
+        int pivot = partition(arr, low, high);
+        int index = pivot - low + 1;
+
+        if (index == k) {
+            return arr[pivot];
+        } else if (index > k) {
+            return quickSelect(arr, low, pivot - 1, k);
+        } else {
+            return quickSelect(arr, pivot + 1, high, k - index);
+        }
+    }
+
+    /**
+     * Partition an array around a pivot element.
+     *
+     * Algorithm:
+     * 1. Pick a pivot element.
+     * 2. Place the pivot element at the end of the array.
+     * 3. Place index i at the beginning of the array.
+     * 4. Iterate through the array from the beginning to the end.
+     * 5. If the element is smaller than the pivot element, then swap it with the element at index i and increment i.
+     * 6. Swap the pivot element with the element at index i + 1.
+     * 7. Return the index of the pivot element.
+     *
+     * Time Complexity: O(n)
+     * Space Complexity: O(1)
+     *
+     * Example:
+     * Input: arr[] = {5, 2, 3, 1, 4}
+     * Pivot: 4
+     * i: -1
+     * j: 0
+     * arr[] = {5, 2, 3, 1, 4}
+     *
+     * i: 0
+     * j: 1
+     * arr[] = {2, 5, 3, 1, 4}
+     *
+     * i: 0
+     * j: 2
+     * arr[] = {2, 5, 3, 1, 4}
+     *
+     * i: 1
+     * j: 3
+     * arr[] = {2, 5, 3, 1, 4}
+     *
+     * i: 2
+     * j: 4
+     * arr[] = {2, 5, 3, 1, 4}
+     *
+     * Swap 4 and 5.
+     * arr[] = {2, 3, 5, 1, 4}
+     *
+     * Return 2.
+     *
+     *
+     * @param arr
+     * @param low
+     * @param high
+     * @return
+     */
+    private int partition(int[] arr, int low, int high) {
+        int pivot = arr[high];
+        int i = low - 1;
+
+        for (int j = low; j < high; j++) {
+            if (arr[j] >= pivot) {
+                i++;
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+
+        int temp = arr[i + 1];
+        arr[i + 1] = arr[high];
+        arr[high] = temp;
+
+        return i + 1;
+    }
+
+
 
 
     public static void main(String[] args) {
