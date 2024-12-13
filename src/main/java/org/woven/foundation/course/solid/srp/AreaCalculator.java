@@ -17,10 +17,11 @@ public class AreaCalculator {
      * <p>
      * Hence it open for extension , but closed for modification
      * </p>
+     *
      * @return sum
      */
     public int sum() {
-        return shapes.stream().map(Shape::calculateArea).reduce(0,Integer::sum);
+        return shapes.stream().map(Shape::calculateArea).reduce(0, Integer::sum);
     }
 
     public double average() {

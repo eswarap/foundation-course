@@ -23,18 +23,17 @@ public class CurrencyFactory {
     public static final String SWITZERLAND = "Switzerland";
 
     static {
-        CURRENCIES.put(INDIA,new Rupee());
-        CURRENCIES.put(USA,new USDollar());
-        CURRENCIES.put(FRANCE,new Euro());
-        CURRENCIES.put(UK,new Pound());
-        CURRENCIES.put(SWITZERLAND,new Franc());
+        CURRENCIES.put(INDIA, new Rupee());
+        CURRENCIES.put(USA, new USDollar());
+        CURRENCIES.put(FRANCE, new Euro());
+        CURRENCIES.put(UK, new Pound());
+        CURRENCIES.put(SWITZERLAND, new Franc());
     }
 
     public static Currency getCurrency(String country) {
         if (CURRENCIES.containsKey(country)) {
             return CURRENCIES.get(country);
-        }
-        else {
+        } else {
             throw new IllegalArgumentException("Unknown currency: " + country);
         }
     }

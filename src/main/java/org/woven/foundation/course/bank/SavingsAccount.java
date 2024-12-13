@@ -12,21 +12,21 @@ public class SavingsAccount extends BankAccount {
         double interest = interestRate * interestRate;
         deposit(interest);
     }
+
     public SavingsAccount(final String accountNumber, final double balance,
                           final AccountType accountType, final String accountName) {
         super(accountNumber, balance, accountType, accountName);
     }
 
     public static void main(String[] args) {
-        BankAccount account = new BankAccount("12345",0,AccountType.SAVINGS,"ICICI Bank");
+        BankAccount account = new BankAccount("12345", 0, AccountType.SAVINGS, "ICICI Bank");
         try {
             account.deposit(10);
             account.withdraw(10);
             account.deposit(22);
             account.deposit(-300);
             account.withdraw(220);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         System.out.println(account);

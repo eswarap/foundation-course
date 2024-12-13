@@ -9,7 +9,7 @@ public class BinarySearch {
         int low = 0, high = input.length - 1;
 
         while (low <= high) {
-            int mid = low + (high - low ) / 2;
+            int mid = low + (high - low) / 2;
 
             if (sorted[mid] == element)
                 return true;

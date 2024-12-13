@@ -5,7 +5,7 @@ import java.util.Stack;
 
 public class NextGreatElement {
     public static void main(String[] args) {
-        int[] arr = { 15, 20, 13 };
+        int[] arr = {15, 20, 13};
         int[] result = nextGreatElement(arr);
         System.out.println(Arrays.toString(arr));
         System.out.println(Arrays.toString(result));

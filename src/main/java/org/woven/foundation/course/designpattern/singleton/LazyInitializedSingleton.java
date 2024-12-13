@@ -3,7 +3,8 @@ package org.woven.foundation.course.designpattern.singleton;
 public class LazyInitializedSingleton {
     private static LazyInitializedSingleton instance;
 
-    private LazyInitializedSingleton() {}
+    private LazyInitializedSingleton() {
+    }
 
     public static LazyInitializedSingleton getInstance() {
         if (instance == null) {

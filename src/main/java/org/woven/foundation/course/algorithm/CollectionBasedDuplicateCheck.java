@@ -18,6 +18,7 @@ public class CollectionBasedDuplicateCheck {
      * Find duplicates in an array using collection.
      * Time Complexity: O(n)
      * Space Complexity: O(n)
+     *
      * @param arr
      */
     public static void findDuplicates(Integer[] arr) {
@@ -41,6 +42,7 @@ public class CollectionBasedDuplicateCheck {
      * Find duplicates in an array using sorting.
      * Time Complexity: O(nlogn)
      * Space Complexity: O(n)
+     *
      * @param arr
      */
     public static void findDuplicatesUsingSorting(Integer[] arr) {
@@ -77,7 +79,7 @@ public class CollectionBasedDuplicateCheck {
 
 
     public static void main(String[] args) {
-        Integer[] arr = {1, 3, 5, 7, 9, 6, 7, 8,3};
+        Integer[] arr = {1, 3, 5, 7, 9, 6, 7, 8, 3};
         CollectionBasedDuplicateCheck.findDuplicates(arr);
         CollectionBasedDuplicateCheck.findDuplicatesUsingSorting(arr);
         CollectionBasedDuplicateCheck.findDuplicatesUsingLamdba(arr);

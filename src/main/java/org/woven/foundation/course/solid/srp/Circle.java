@@ -11,6 +11,6 @@ public class Circle implements Shape {
     }
 
     public int calculateArea() {
-        return (22 * radius * radius)/7;
+        return (22 * radius * radius) / 7;
     }
 }

@@ -33,8 +33,7 @@ public class LinkedList<T> {
             head = newNode;
             tail = newNode;
             size = 1;
-        }
-        else {
+        } else {
             tail.next = newNode;
             tail = newNode;
         }
@@ -96,8 +95,7 @@ public class LinkedList<T> {
         while (current != null) {
             if (current.element.equals(value)) {
                 return true;
-            }
-            else {
+            } else {
                 current = current.next;
             }
         }

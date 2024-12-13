@@ -1,6 +1,6 @@
 package org.woven.foundation.course.solid.srp;
 
-public class Rectangle implements Shape{
+public class Rectangle implements Shape {
     private final int length;
     private final int breadth;
 

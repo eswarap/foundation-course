@@ -15,29 +15,31 @@ public class KthLargestElement {
      * Finds the kth largest element in an unsorted array.
      * Time Complexity: O(nlogn)
      * Space Complexity: O(n)
+     *
      * @param arr
      * @param k
      * @return
      */
     public static int findKthLargestElement(int[] arr, int k) {
-       if (arr == null || arr.length ==0 || k == 0 || k > arr.length) {
-           return  -1;
-       }
-       Arrays.sort(arr);
-       return arr[arr.length - k];
+        if (arr == null || arr.length == 0 || k == 0 || k > arr.length) {
+            return -1;
+        }
+        Arrays.sort(arr);
+        return arr[arr.length - k];
     }
 
     /**
      * Finds the kth largest element in an unsorted array using heap.
      * Time Complexity: O(nlogk)
      * Space Complexity: O(k)
+     *
      * @param arr
      * @param k
      * @return
      */
     public static int findKthLargestElementWithHeap(int[] arr, int k) {
-        if (arr == null || arr.length ==0 || k == 0 || k > arr.length) {
-            return  -1;
+        if (arr == null || arr.length == 0 || k == 0 || k > arr.length) {
+            return -1;
         }
         PriorityQueue<Integer> heap = new PriorityQueue<>(k);
         for (int j : arr) {
@@ -53,7 +55,6 @@ public class KthLargestElement {
 
         return heap.peek();
     }
-
 
 
     public static void main(String[] args) {

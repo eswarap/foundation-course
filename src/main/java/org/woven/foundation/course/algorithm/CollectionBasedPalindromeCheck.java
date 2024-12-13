@@ -19,6 +19,7 @@ public class CollectionBasedPalindromeCheck {
      * <p>
      * Time complexity: O(n).
      * Space complexity: O(n).
+     *
      * @param word
      * @return
      */
@@ -47,10 +48,11 @@ public class CollectionBasedPalindromeCheck {
      * <p>
      * Time complexity: O(n).
      * Space complexity: O(n).
+     *
      * @param word
      * @return
      */
-   public boolean isPalindromeWithDeque(final String word) {
+    public boolean isPalindromeWithDeque(final String word) {
         Deque<Character> deque = new ArrayDeque<>();
         for (Character c : word.toCharArray()) {
             deque.addFirst(c);
@@ -61,6 +63,6 @@ public class CollectionBasedPalindromeCheck {
         }
         return word.equalsIgnoreCase(reversedWord);
 
-   }
+    }
 
 }

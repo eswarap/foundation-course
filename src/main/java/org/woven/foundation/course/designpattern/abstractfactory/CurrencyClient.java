@@ -14,6 +14,6 @@ public class CurrencyClient {
     }
 
     public void displayCurrency() {
-        log.info("Currency : "+ currency.getSymbol());
+        log.info("Currency : " + currency.getSymbol());
     }
 }

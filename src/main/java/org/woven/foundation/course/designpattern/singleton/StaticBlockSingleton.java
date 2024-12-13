@@ -1,10 +1,11 @@
 package org.woven.foundation.course.designpattern.singleton;
 
 public class StaticBlockSingleton {
-    
+
     private static StaticBlockSingleton instance;
-    
-    private StaticBlockSingleton() {}
+
+    private StaticBlockSingleton() {
+    }
 
     static {
         if (instance == null) {
@@ -12,6 +13,7 @@ public class StaticBlockSingleton {
         }
 
     }
+
     public static StaticBlockSingleton getInstance() {
         return instance;
     }

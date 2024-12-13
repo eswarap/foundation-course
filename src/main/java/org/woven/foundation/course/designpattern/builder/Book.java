@@ -34,7 +34,7 @@ public class Book {
         private Year published;
         private String description;
 
-        public Builder(String isbn,String title) {
+        public Builder(String isbn, String title) {
             this.isbn = isbn;
             this.title = title;
         }
@@ -43,6 +43,7 @@ public class Book {
             this.genre = genre;
             return this;
         }
+
         public Builder author(String author) {
             this.author = author;
             return this;
@@ -52,8 +53,9 @@ public class Book {
             this.published = published;
             return this;
         }
+
         public Builder description(String description) {
-            this.description= description;
+            this.description = description;
             return this;
         }
 

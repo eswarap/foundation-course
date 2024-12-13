@@ -1,6 +1,6 @@
 package org.woven.foundation.course.bank;
 
-public class CurrentAccount extends BankAccount{
+public class CurrentAccount extends BankAccount {
     private double balance;
     private final double overDraftLimit;
 

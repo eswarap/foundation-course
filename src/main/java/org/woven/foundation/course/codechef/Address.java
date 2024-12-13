@@ -19,6 +19,6 @@ public class Address {
     }
 
     void displayAddress() {
-       log.info("Street: " + street + ", City: " + city + ", Postal Code: " + postalCode);
+        log.info("Street: " + street + ", City: " + city + ", Postal Code: " + postalCode);
     }
 }

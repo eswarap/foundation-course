@@ -6,7 +6,7 @@ import lombok.ToString;
 
 @Getter
 @ToString
-public  class BankAccount implements Account {
+public class BankAccount implements Account {
     private final String accountNumber;
     private final AccountType accountType;
     private final String accountName;
@@ -27,13 +27,13 @@ public  class BankAccount implements Account {
         }
         balance += amount;
     }
+
     @Override
     @SneakyThrows
     public void withdraw(final double amount) {
         if (amount <= balance) {
             balance -= amount;
-        }
-        else {
+        } else {
             throw new IllegalArgumentException("withdrawal amount must be lesser or equal to balance");
         }
     }

@@ -1,6 +1,6 @@
 package org.woven.foundation.course.solid.srp;
 
-public class Square implements Shape{
+public class Square implements Shape {
     private final int length;
 
     public Square(final int length) {

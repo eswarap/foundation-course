@@ -14,6 +14,6 @@ public class LinearSearch<T> {
     }
 
     public boolean lambdaSearch(final List<T> input, final T element) {
-       return input.stream().anyMatch(p->p.equals(element));
+        return input.stream().anyMatch(p -> p.equals(element));
     }
 }
