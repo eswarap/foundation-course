@@ -150,4 +150,13 @@ public class TestBook {
                             .forEach(num -> logger.log(Level.INFO,String.valueOf(num))); //Consumer
     }
 
+    @Test
+    void testGroupingByAndPartitionBy() {
+        Map<Boolean, Map<Genre, List<Book>>> results = books.stream()
+                .collect(Collectors.partitioningBy(b -> b.getPublished().isBefore(Year.of(2020)) ,
+                        Collectors.groupingBy(Book::getGenre)));
+
+        results.forEach((key,value) ->
+                logger.log(Level.INFO,"{0} : {1}, {2} \n",new Object[]{key,value}));
+    }
 }
