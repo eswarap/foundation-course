@@ -1,6 +1,7 @@
 package org.woven.foundation.course.algorithm;
 
 import org.junit.jupiter.api.*;
+import org.woven.foundation.course.algorithm.search.TwoPointer;
 
 public class RemoveDuplicatesTest {
     @Test

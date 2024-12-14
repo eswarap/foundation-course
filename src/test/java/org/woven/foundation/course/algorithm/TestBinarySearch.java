@@ -4,6 +4,7 @@ import org.junit.jupiter.api.*;
 
 import java.util.*;
 import java.util.logging.*;
+import org.woven.foundation.course.algorithm.search.BinarySearch;
 
 public class TestBinarySearch {
 

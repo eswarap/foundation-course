@@ -3,6 +3,7 @@ package org.woven.foundation.course.algorithm;
 import org.junit.jupiter.api.*;
 
 import java.util.*;
+import org.woven.foundation.course.algorithm.search.LinearSearch;
 
 public class TestLinearSearch {
 

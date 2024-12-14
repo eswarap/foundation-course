@@ -1,4 +1,4 @@
-package org.woven.foundation.course.algorithm;
+package org.woven.foundation.course.algorithm.search;
 
 import java.util.Arrays;
 import java.util.Objects;

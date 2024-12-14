@@ -3,6 +3,7 @@ package org.woven.foundation.course.algorithm;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.*;
 import org.mockito.junit.jupiter.*;
+import org.woven.foundation.course.algorithm.search.TwoPointer;
 
 import static org.junit.jupiter.api.Assertions.*;
 
